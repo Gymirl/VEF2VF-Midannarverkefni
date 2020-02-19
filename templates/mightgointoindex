@@ -1,0 +1,6 @@
+    <div class="kort">
+    <h2>besta verðið</h2>
+    <!--<h4>Ódýrasta bensínið: <i>{{ minP[0] }} kr.</i> er hjá {{minP[1]}}, {{minP[2]}}</h4>
+    <h4>Ódýrasta Diesel Olian: <i>{{minD[0]}} kr.</i> er hjá {{minD[1]}}, {{minD[2]}} </h4>
+    <p>Siðast uppfært: {{ gogn.timestampPriceCheck | format_time }}</p>
+    </div>-->

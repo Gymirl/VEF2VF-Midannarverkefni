@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Eldsneytisverd{% endblock %}
+{% block content %}
+<main class="wrapper">
+    {% set oneco=[] %}
+    {% for item in data['results']%}
+        {% if item.company not in oneco %}
+            {% do oneco.append(item.company) %}
+<div class="box">
+    <a href="/company/{{ item.company}}">
+        <img src="static/{{ item.company}}.png" alt="placeholder" title="{{item.company}}">
+    </a>
+</div>
+        {% endif %}
+    {%endfor%}
+</main>
+<hr>
+<div>
+ <h2>BEST VERÐ</h2>
+ <h4>Ódyrasta bensin:{{ MinP[0] }} er hjá {{ MinP[1] }} Fyrirtæki {{ MinP[2] }}</h4>
+
+</div>
+{% endblock %}
