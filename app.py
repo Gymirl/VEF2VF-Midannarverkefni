@@ -17,6 +17,14 @@ def format_time(data):
     return datetime.strptime(data, '%Y-%m-%dT%H:%M:%S.%f').strftime('%d.%m.%Y. KL.%H:%M ')
 app.jinja_env.filters['format_time'] = format_time
 
+#def returntime():
+ #   lst=data['results']
+  #  timestampPriceCheck = ['timestampPriceCheck']
+   # return [timestampPriceCheck]
+    #Nope sorry nothing        
+        #var returntime i data
+
+
 def minPetrol():#LÆGSTA VERÐ yhman
     minPetrolPrice = 1000
     company = None
@@ -30,10 +38,23 @@ def minPetrol():#LÆGSTA VERÐ yhman
                 address = i['name']
     return [minPetrolPrice, company, address]#LÆGSTA VERD
 
+def minDiesel():#LÆGSTA VERÐ yhman
+    minDieselPrice = 1000
+    company = None
+    address = None
+    lst1 = data['results']
+    for i in lst1:#looop
+        if i['diesel'] is not None:     
+            if i['diesel'] < minDieselPrice:
+                minDieselPrice = i['diesel']
+                company = i['company']
+                address = i['name']
+    return [minDieselPrice, company, address]#LÆGSTA VERD
+
 
 @app.route('/')#Öll fyrirtæki einusinni
 def home():
-    return render_template('index.html', data=data, MinP=minPetrol())
+    return render_template('index.html', data=data, MinP=minPetrol(), MinD=minDiesel())
 
 #Eitt fyrirtæki allar stodvar
 @app.route('/company/<company>')

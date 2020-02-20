@@ -3,4 +3,5 @@
     <!--<h4>Ódýrasta bensínið: <i>{{ minP[0] }} kr.</i> er hjá {{minP[1]}}, {{minP[2]}}</h4>
     <h4>Ódýrasta Diesel Olian: <i>{{minD[0]}} kr.</i> er hjá {{minD[1]}}, {{minD[2]}} </h4>
     <p>Siðast uppfært: {{ gogn.timestampPriceCheck | format_time }}</p>
+    <p>Siðasta uppfærsla er:{%raw%}{{time[0]}}{%endraw%}</p> MEGA FAIL CODE OK?
     </div>-->
